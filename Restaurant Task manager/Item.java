@@ -1,28 +1,30 @@
-
-
-
 public class Item 
 {
 
-        enum Category{
-             Sandwich,
-             Pizza,
-             Burger,
-             Sides,
-             Drinks,
-             Dessert,
-            }
+        
 
         private float minutesToPrepare;
-        private String Category;
+        Category category;
+        
+        public Category getCategory() {
+          return category;
+        }
+
+
         private float price;
+
+        public float getPrice() {
+          return price;
+        }
+
+
         private String Description;
 
 
 
-        public Item(String Category, float minutesToPrepare, float price,String Description)
+        public Item(Category category, float minutesToPrepare, float price,String Description)
         {
-          this.Category=Category;
+          this.category=category;
           this.minutesToPrepare=minutesToPrepare;
           this.price=price;
           this.Description=Description;
