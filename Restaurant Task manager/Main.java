@@ -6,7 +6,14 @@ public class Main {
         Scanner std = new Scanner(System.in);
 
         Queue<Order> ActiveOrders = new LinkedList<Order>();
-        System.out.println("test");
+        System.out.println("Waiting for command...Select Option : ");
+        System.out.println("1) Add Order");
+        System.out.println("Select Option : ");
+        System.out.println("Select Option : ");
+        System.out.println("Select Option : ");
+        System.out.println("Select Option : ");
+        int Ans= std.nextInt();
+        Menu menu= new Menu(Ans);
 
         std.close();
     }
