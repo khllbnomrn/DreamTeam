@@ -1,37 +1,56 @@
 import java.util.*;
 
-    enum Status{
+enum Status{
         PENDING,
         ONGOING,
         COMPLETE
-    }
-    enum Urgency{
+}
+enum Urgency{
         HIGH,
         MEDIUM,
-        LOW
-    }
+        LOW,
+        Null
+}
 
 public class Order{
 
-    private int orderId;
-    private String specialInstructions;
 
-    private float estimatedMinutes; 
-    
-    public float getEstimatedMinutes() {
-        return estimatedMinutes;
-    }
+         static int orderIdCounter=1;
 
-    Status status = Status.PENDING;
-    Urgency urgency = Urgency.MEDIUM;
+         public int orderId;
+        private String specialInstructions;
+        Status status= Status.PENDING;
+        Urgency urgency;
 
-    ArrayList<Item> Items= new ArrayList<Item>();
+        public Order(){}
+        public Order(String specialInstructions,int x)
+        {
+                orderId=orderIdCounter++;
+                this.specialInstructions=specialInstructions;
+                switch (x)
+                {
+                        case  1 :   urgency=Urgency.HIGH;
+                                break;
+                        case  2 :   urgency=Urgency.MEDIUM;
+                                break;
+                        case  3 :   urgency=Urgency.LOW;
+                                break;
+                }
+        }
 
-    
-    
 
 
 
 
-   
+
+
+        Stack<Item> Items= new Stack<Item>();
+
+
+        public String toString(){return this.orderId +" | "+ specialInstructions +" | Priority : "+urgency+"| Status : "+status+"\n";}
+
+
+
+
+
 }
